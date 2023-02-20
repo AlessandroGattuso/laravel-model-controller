@@ -8,20 +8,26 @@ use App\Models\Comic;
 class ComicController extends Controller
 {
 
+    //Show all comics in the home page
     public function index(){
         $data = Comic::all();
+
         $images = config('comics.images');
         $menu = config('comics.menu');
         $socials = config('comics.socials');
+
         return view('home', compact('data','images','menu','socials'));
     }
 
+    //Get the single by slug's comic attribute in the single comic page
     public function getComic($comicSlug){
         $comic = Comic::where('slug', $comicSlug)->get();
+        $comic = $comic[0];
+
         $images = config('comics.images');
         $menu = config('comics.menu');
-        $comic = $comic[0];
         $socials = config('comics.socials');
+
         return view('comic', compact('comic','menu','images','socials'));
     } 
 }
