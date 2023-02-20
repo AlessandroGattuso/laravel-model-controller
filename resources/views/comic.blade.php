@@ -15,13 +15,13 @@
           <div class="flex flex-center">
             <span>Artists: </span>
             <p class="artists">
-                {{implode(', ', $comic['artists'])}} 
+                {{$comic['artists']}} 
             </p>
           </div>
           <div class="flex flex-center">
             <span>Writers: </span>
             <p class="writers">
-              {{implode(', ', $comic['writers'])}} 
+              {{$comic['writers']}} 
             </p>
           </div>
           <span class="price">{{$comic['price']}}</span>
