@@ -8,7 +8,7 @@
     <div class="menu flex h-100 w-100">
       <ul class="h-100 mr-2">
         @foreach($menu as $menuItem)
-          <li class="h-100 flex flex-center cursor-pointer" class="{{(Route::currentRouteName() == 'home') ? 'active' : ''}}">
+          <li class="h-100 flex flex-center cursor-pointer {{($menuItem == 'comics') ? 'active' : ''}}">
               {{ $menuItem }}
           </li>
         @endforeach

@@ -20,8 +20,8 @@ class ComicController extends Controller
     }
 
     //Get the single by slug's comic attribute in the single comic page
-    public function getComic($comicSlug){
-        $comic = (Comic::where('slug', $comicSlug)->get())[0];
+    public function getComic($slug){
+        $comic = (Comic::where('slug', $slug)->get())[0];
 
         $images = config('comics.images');
         $menu = config('comics.menu');
